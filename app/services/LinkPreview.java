@@ -29,7 +29,7 @@ import scala.concurrent.Future;
 @Singleton
 public class LinkPreview {
 
-  private static final String key = "5bacf6e3d7a55d81f3fc41fc0037e8a9044dc05ede41e";
+  private static final String key = "5bad260d5ba09905bc51d22a823f1de2c6090a73bf6e9";
   private static final String urlPattern = "http://api.linkpreview.net/?key=%s&q=%s";
   private static final String taggingKey = "42d32b086b4aef04a2e00dde1f28261df315c88488b23fa594c8f32c";
   private final WSClient ws;

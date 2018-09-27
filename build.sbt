@@ -36,9 +36,10 @@ libraryDependencies += "org.hibernate" % "hibernate-core" % "5.2.17.Final"
 libraryDependencies += "io.dropwizard.metrics" % "metrics-core" % "3.2.1"
 libraryDependencies += "com.palominolabs.http" % "url-builder" % "1.1.0"
 libraryDependencies += "net.jodah" % "failsafe" % "1.0.3"
-
+libraryDependencies += ws
 libraryDependencies += "io.gatling.highcharts" % "gatling-charts-highcharts" % gatlingVersion(scalaBinaryVersion.value) % Test
 libraryDependencies += "io.gatling" % "gatling-test-framework" % gatlingVersion(scalaBinaryVersion.value) % Test
+libraryDependencies += "com.textrazor" % "textrazor" % "1.0.9"
 
 PlayKeys.externalizeResources := false
 

@@ -45,29 +45,25 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library" scope="TEST">
-      <library>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/build/playBinary/testClasses" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
     <orderEntry type="library" name="Gradle: com.typesafe.play:play-guice_2.12:2.6.19" level="project" />
     <orderEntry type="library" name="Gradle: com.typesafe.play:play-logback_2.12:2.6.19" level="project" />
     <orderEntry type="library" name="Gradle: com.typesafe.play:play-java-jpa_2.12:2.6.19" level="project" />
     <orderEntry type="library" name="Gradle: com.h2database:h2:1.4.197" level="project" />
     <orderEntry type="library" name="Gradle: org.hibernate:hibernate-core:5.2.9.Final" level="project" />
+    <orderEntry type="library" name="Gradle: com.textrazor:textrazor:1.0.9" level="project" />
     <orderEntry type="library" name="Gradle: io.dropwizard.metrics:metrics-core:3.2.1" level="project" />
     <orderEntry type="library" name="Gradle: com.palominolabs.http:url-builder:1.1.0" level="project" />
     <orderEntry type="library" name="Gradle: net.jodah:failsafe:1.0.3" level="project" />
+    <orderEntry type="library" name="Gradle: com.typesafe.play:play-ws_2.12:2.6.19" level="project" />
     <orderEntry type="library" name="Gradle: com.typesafe.play:play-java-forms_2.12:2.6.19" level="project" />
     <orderEntry type="library" name="Gradle: com.typesafe.play:play-java-jdbc_2.12:2.6.19" level="project" />
     <orderEntry type="library" name="Gradle: com.typesafe.play:play-java_2.12:2.6.19" level="project" />
     <orderEntry type="library" name="Gradle: com.typesafe.play:play-jdbc_2.12:2.6.19" level="project" />
     <orderEntry type="library" name="Gradle: com.typesafe.play:play-jdbc-api_2.12:2.6.19" level="project" />
     <orderEntry type="library" name="Gradle: com.typesafe.play:play_2.12:2.6.19" level="project" />
+    <orderEntry type="library" name="Gradle: com.typesafe.play:play-ws-standalone-xml_2.12:1.1.10" level="project" />
+    <orderEntry type="library" name="Gradle: com.typesafe.play:play-ws-standalone-json_2.12:1.1.10" level="project" />
+    <orderEntry type="library" name="Gradle: com.typesafe.play:play-ws-standalone_2.12:1.1.10" level="project" />
     <orderEntry type="library" name="Gradle: com.typesafe.play:play-streams_2.12:2.6.19" level="project" />
     <orderEntry type="library" name="Gradle: com.typesafe.akka:akka-slf4j_2.12:2.5.16" level="project" />
     <orderEntry type="library" name="Gradle: com.typesafe.akka:akka-stream_2.12:2.5.16" level="project" />
@@ -79,8 +75,8 @@
     <orderEntry type="library" name="Gradle: org.scala-lang.modules:scala-xml_2.12:1.0.6" level="project" />
     <orderEntry type="library" name="Gradle: com.typesafe.play:play-functional_2.12:2.6.10" level="project" />
     <orderEntry type="library" name="Gradle: org.typelevel:macro-compat_2.12:1.1.1" level="project" />
-    <orderEntry type="library" name="Gradle: com.typesafe.akka:akka-protobuf_2.12:2.5.16" level="project" />
     <orderEntry type="library" name="Gradle: com.typesafe:ssl-config-core_2.12:0.2.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.typesafe.akka:akka-protobuf_2.12:2.5.16" level="project" />
     <orderEntry type="library" name="Gradle: org.scala-lang.modules:scala-parser-combinators_2.12:1.1.1" level="project" />
     <orderEntry type="library" name="Gradle: org.scala-lang:scala-library:2.12.6" level="project" />
     <orderEntry type="library" name="Gradle: com.google.inject.extensions:guice-assistedinject:4.1.0" level="project" />
@@ -97,6 +93,12 @@
     <orderEntry type="library" name="Gradle: org.jboss:jandex:2.0.3.Final" level="project" />
     <orderEntry type="library" name="Gradle: com.fasterxml:classmate:1.3.1" level="project" />
     <orderEntry type="library" name="Gradle: dom4j:dom4j:1.6.1" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.8.11" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.8.11" level="project" />
+    <orderEntry type="library" name="Gradle: io.jsonwebtoken:jjwt:0.7.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.8.11.1" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.8.11" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.8.11" level="project" />
     <orderEntry type="library" name="Gradle: com.typesafe.play:play-netty-utils:2.6.19" level="project" />
     <orderEntry type="library" name="Gradle: org.slf4j:jul-to-slf4j:1.7.25" level="project" />
     <orderEntry type="library" name="Gradle: org.slf4j:jcl-over-slf4j:1.7.25" level="project" />
@@ -109,12 +111,6 @@
     <orderEntry type="library" name="Gradle: org.apache.commons:commons-lang3:3.6" level="project" />
     <orderEntry type="library" name="Gradle: net.jodah:typetools:0.5.0" level="project" />
     <orderEntry type="library" name="Gradle: com.typesafe.play:build-link:2.6.19" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.8.11" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.8.11" level="project" />
-    <orderEntry type="library" name="Gradle: io.jsonwebtoken:jjwt:0.7.0" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.8.11.1" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.8.11" level="project" />
-    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.8.11" level="project" />
     <orderEntry type="library" name="Gradle: commons-codec:commons-codec:1.10" level="project" />
     <orderEntry type="library" name="Gradle: javax.xml.bind:jaxb-api:2.3.0" level="project" />
     <orderEntry type="library" name="Gradle: javax.transaction:jta:1.1" level="project" />
@@ -172,6 +168,10 @@
     <orderEntry type="library" scope="TEST" name="Gradle: io.suzaku:boopickle_2.12:1.2.6" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.github.scopt:scopt_2.12:3.7.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: io.gatling:jsonpath_2.12:0.6.9" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.9.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.9.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.9.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.9.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.asynchttpclient:async-http-client:2.0.35" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.asynchttpclient:async-http-client-netty-utils:2.0.35" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.asynchttpclient:netty-resolver-dns:2.0.35" level="project" />
@@ -185,10 +185,6 @@
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.code.findbugs:jsr305:3.0.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.seleniumhq.selenium:htmlunit-driver:2.27" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: net.sourceforge.htmlunit:htmlunit:2.27" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.9.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.9.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.9.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.9.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.apache.httpcomponents:httpmime:4.5.3" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.apache.httpcomponents:httpclient:4.5.3" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.novocode:junit-interface:0.11" level="project" />

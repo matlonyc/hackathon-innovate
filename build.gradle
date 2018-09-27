@@ -48,9 +48,11 @@ dependencies {
     play "com.h2database:h2:1.4.197"
 
     play "org.hibernate:hibernate-core:5.2.9.Final"
+    play "com.textrazor:textrazor:1.0.9"
     play "io.dropwizard.metrics:metrics-core:3.2.1"
     play "com.palominolabs.http:url-builder:1.1.0"
     play "net.jodah:failsafe:1.0.3"
+    play "com.typesafe.play:play-ws_2.12:2.6.19"
 
     playTest "io.gatling.highcharts:gatling-charts-highcharts:$gatlingVersion"
     playTest "io.gatling:gatling-test-framework:$gatlingVersion"

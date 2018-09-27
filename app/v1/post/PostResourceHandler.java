@@ -9,6 +9,8 @@ import java.nio.charset.CharacterCodingException;
 import java.util.Optional;
 import java.util.concurrent.CompletionStage;
 import java.util.stream.Stream;
+import services.LinkPreview;
+import services.LinkPreview.LinkPreviewData;
 
 /**
  * Handles presentation of Post resources, which map to JSON.
@@ -17,11 +19,13 @@ public class PostResourceHandler {
 
     private final PostRepository repository;
     private final HttpExecutionContext ec;
+    private final LinkPreview linkPreview;
 
     @Inject
-    public PostResourceHandler(PostRepository repository, HttpExecutionContext ec) {
+    public PostResourceHandler(PostRepository repository, HttpExecutionContext ec, LinkPreview linkPreview) {
         this.repository = repository;
         this.ec = ec;
+        this.linkPreview = linkPreview;
     }
 
     public CompletionStage<Stream<PostResource>> find() {
@@ -32,6 +36,7 @@ public class PostResourceHandler {
 
     public CompletionStage<PostResource> create(PostResource resource) {
         final PostData data = new PostData(resource.getUserId(), resource.getUrls());
+        LinkPreviewData preview = linkPreview.getLinkPreview(data.urls);
         return repository.create(data).thenApplyAsync(savedData -> {
             return new PostResource(savedData, link(savedData));
         }, ec.current());

@@ -9,6 +9,7 @@ import javax.inject.Inject;
 import java.util.List;
 import java.util.concurrent.CompletionStage;
 import java.util.stream.Collectors;
+import services.LinkPreview;
 
 @With(PostAction.class)
 public class PostController extends Controller {

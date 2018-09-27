@@ -44,6 +44,4 @@ libraryDependencies += "com.textrazor" % "textrazor" % "1.0.9"
 libraryDependencies += "org.hibernate" % "hibernate-entitymanager" % "5.2.17.Final" // replace by your jpa implementation
 
 
-PlayKeys.externalizeResources := false
-
 testOptions in Test := Seq(Tests.Argument(TestFrameworks.JUnit, "-a", "-v"))

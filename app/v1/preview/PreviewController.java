@@ -20,9 +20,13 @@ public class PreviewController extends Controller {
   }
 
   public Result list() {
-    logger.error("Yo: " + linkPreview.get().size());
+//    logger.error("Yo: " + linkPreview.get().size());
 
 //    return ok(Json.toJson(linkPreview.get().stream().map(JsValue::toString).collect(Collectors.toList())));
     return ok(Json.toJson(linkPreview.get()));
+  }
+
+  public Result allTags() {
+    return ok(Json.toJson(linkPreview.getAllTags()));
   }
 }

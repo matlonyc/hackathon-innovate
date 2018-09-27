@@ -1,2 +1,3 @@
 
 GET    /                     v1.preview.PreviewController.list
+GET    /tags                 v1.preview.PreviewController.allTags

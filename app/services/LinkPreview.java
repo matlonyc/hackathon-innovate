@@ -37,6 +37,7 @@ public class LinkPreview {
   private final Logger.ALogger logger = Logger.of(this.getClass());
   private final Map<String, JsonNode> previews = Maps.newConcurrentMap();
   private final TextRazor client = new TextRazor(taggingKey);
+  private final Set<String> allTags = Sets.newConcurrentHashSet();
 
   @Inject
   public LinkPreview(WSClient ws, ExecutionContext ec) {
@@ -59,6 +60,10 @@ public class LinkPreview {
     return ImmutableList.copyOf(previews.values());
   }
 
+  public List<String> getAllTags() {
+    return allTags.stream().collect(Collectors.toList());
+  }
+
   private Object doSomethingWithResponse(String url, WSResponse response) {
     JsonNode test = Json.parse(response.json().toString());
     ((ObjectNode) test).put("date", LocalDateTime.now().toString());
@@ -70,6 +75,7 @@ public class LinkPreview {
       for (Entity entity : taggingResponse.getResponse().getEntities()) {
 //        logger.error("tagging: " + entity.getEntityId());
         tags.add(entity.getEntityId());
+        allTags.add(entity.getEntityId());
       }
     } catch (Exception e) {
       logger.error(e.getMessage());

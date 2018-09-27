@@ -1,5 +1,6 @@
 package v1.post;
 
+import java.util.List;
 import javax.persistence.*;
 
 /**
@@ -12,14 +13,14 @@ public class PostData {
     public PostData() {
     }
 
-    public PostData(String title, String body) {
-        this.title = title;
-        this.body = body;
+    public PostData(String userId, String urls) {
+        this.userId = userId;
+        this.urls = urls;
     }
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     public Long id;
-    public String title;
-    public String body;
+    public String userId;
+    public String urls;
 }

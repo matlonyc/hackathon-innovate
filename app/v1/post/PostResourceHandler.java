@@ -31,7 +31,7 @@ public class PostResourceHandler {
     }
 
     public CompletionStage<PostResource> create(PostResource resource) {
-        final PostData data = new PostData(resource.getTitle(), resource.getBody());
+        final PostData data = new PostData(resource.getUserId(), resource.getUrls());
         return repository.create(data).thenApplyAsync(savedData -> {
             return new PostResource(savedData, link(savedData));
         }, ec.current());
@@ -44,7 +44,7 @@ public class PostResourceHandler {
     }
 
     public CompletionStage<Optional<PostResource>> update(String id, PostResource resource) {
-        final PostData data = new PostData(resource.getTitle(), resource.getBody());
+        final PostData data = new PostData(resource.getUserId(), resource.getUrls());
         return repository.update(Long.parseLong(id), data).thenApplyAsync(optionalData -> {
             return optionalData.map(op -> new PostResource(op, link(op)));
         }, ec.current());

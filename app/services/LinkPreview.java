@@ -43,7 +43,7 @@ public class LinkPreview {
   public LinkPreview(WSClient ws, ExecutionContext ec) {
     this.ws = ws;
     this.ec = ec;
-    client.addExtractor("words");
+    client.addExtractor("topics");
     client.addExtractor("entities");
   }
 
@@ -74,8 +74,13 @@ public class LinkPreview {
           client.analyze(test.at("/description").toString());
       for (Entity entity : taggingResponse.getResponse().getEntities()) {
 //        logger.error("tagging: " + entity.getEntityId());
-        tags.add(entity.getEntityId());
-        allTags.add(entity.getEntityId());
+        List<String> newTags =
+            entity.getFreebaseTypes().stream().map(s -> s.split("/")[1]).collect(Collectors.toList());
+        if (newTags.isEmpty()) {
+          tags.addAll(entity.getFreebaseTypes());
+        }
+        tags.addAll(newTags);
+        allTags.addAll(newTags);
       }
     } catch (Exception e) {
       logger.error(e.getMessage());

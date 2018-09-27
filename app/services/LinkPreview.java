@@ -38,7 +38,16 @@ public class LinkPreview {
   private final Map<String, JsonNode> previews = Maps.newConcurrentMap();
   private final TextRazor client = new TextRazor(taggingKey);
   private final Set<String> allTags = Sets.newConcurrentHashSet();
-
+  private final Set<String> goodTags = Sets.newHashSet(
+      "tv",
+      "education",
+      "music",
+      "government",
+      "business",
+      "sports",
+      "food"
+  );
+  private final String noTag = "finance";
   @Inject
   public LinkPreview(WSClient ws, ExecutionContext ec) {
     this.ws = ws;
@@ -75,9 +84,12 @@ public class LinkPreview {
       for (Entity entity : taggingResponse.getResponse().getEntities()) {
 //        logger.error("tagging: " + entity.getEntityId());
         List<String> newTags =
-            entity.getFreebaseTypes().stream().map(s -> s.split("/")[1]).collect(Collectors.toList());
+            entity.getFreebaseTypes().stream()
+                .map(s -> s.split("/")[1])
+                .filter(goodTags::contains)
+                .collect(Collectors.toList());
         if (newTags.isEmpty()) {
-          tags.addAll(entity.getFreebaseTypes());
+          newTags.add(noTag);
         }
         tags.addAll(newTags);
         allTags.addAll(newTags);
@@ -85,7 +97,8 @@ public class LinkPreview {
     } catch (Exception e) {
       logger.error(e.getMessage());
     }
-
+    if(tags.isEmpty())
+      tags.add(noTag);
     ((ObjectNode) test).put("tags", tags.stream().collect(Collectors.joining(",")));
 
     previews.put(url, test);
